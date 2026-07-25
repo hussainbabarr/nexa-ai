@@ -1,0 +1,23 @@
+{
+  "name": "nexa-ai-mobile",
+  "version": "1.0.4",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "mobile",
+    "server"
+  ],
+  "scripts": {
+    "mobile": "npm run start --workspace mobile",
+    "android": "npm run android --workspace mobile",
+    "ios": "npm run ios --workspace mobile",
+    "web": "npm run web --workspace mobile",
+    "server": "npm run dev --workspace server",
+    "check": "npm run check --workspace mobile && npm run check --workspace server && npm run check:vercel",
+    "check:vercel": "tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --esModuleInterop --skipLibCheck src/index.ts",
+    "build:server": "npm run build --workspace server"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
