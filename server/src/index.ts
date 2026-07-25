@@ -6,13 +6,14 @@ import express, {
   type Request,
   type Response,
 } from "express";
-import rateLimit from "express-rate-limit";
-import { mkdirSync, writeFileSync } from "node:fs";
 import { rateLimit } from "express-rate-limit";
+import { mkdirSync, writeFileSync } from "node:fs";
+import path from "node:path";
 import { Groq } from "groq-sdk";
-import helmet from "helmet";
+import helmet = require("helmet");
 import { OpenAI } from "openai";
 import { z } from "zod";
+
 const app = express();
 const port = Number.parseInt(process.env.PORT ?? "3000", 10);
 const chatProvider =
