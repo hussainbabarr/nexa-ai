@@ -10,7 +10,7 @@ import rateLimit from "express-rate-limit";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { rateLimit } from "express-rate-limit";
 import { Groq } from "groq-sdk";
-import helmet from "helmet";
+import helmet = require("helmet");
 import { OpenAI } from "openai";
 import { z } from "zod";
 const app = express();
