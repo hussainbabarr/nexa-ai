@@ -374,9 +374,12 @@ app.post(
   },
 );
 
-app.get(/^\/(?!api\/|health$|generated\/).*/, (_request, response) => {
-  response.redirect(302, "/index.html");
-});
+app.get(
+  /^\/(?!api\/|health$|generated\/).*/,
+  (_request, response) => {
+    response.redirect(302, "/index.html");
+  },
+);
 app.use(
   (
     error: unknown,
